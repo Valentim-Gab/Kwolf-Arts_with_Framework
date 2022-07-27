@@ -43,7 +43,7 @@
                     <input class="campo" type="password" placeholder="Digite a senha novamente" id="rSenha">
                 </div>
                 <div class="d-flex flex-column flex-lg-row align-items-start gap-10">
-                    <input class="campo" type="text" placeholder="Telefone" name="telefone" value="${usuario.telefone}">
+                    <input class="campo" type="text" placeholder="Telefone" name="telefone" id="telefone" value="${usuario.telefone}">
                     <input class="campo" type="text" placeholder="Nacionalidade" name="nacionalidade" value="${usuario.nacionalidade}">
                 </div>
                 <div class="d-flex flex-column flex-lg-row align-items-start gap-2">

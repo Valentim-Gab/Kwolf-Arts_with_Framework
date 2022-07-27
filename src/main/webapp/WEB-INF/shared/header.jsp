@@ -27,15 +27,30 @@
                         Sobre
                     </a>
                 </li>
-                <li class="pesquisa">
-                    <form action="/kwolf_arts/arte-pesquisa" method="post">
-                        <input type="text" name="campoPesquisa" style="width: 50%" />
-                        <button class="btn btn-light" type="submit">
-                            <img title="pesquisar" src="images/pesquisar.png" alt="pesquisar" width="33" height="33">
-                        </button>
-                    </form>
-                </li>
-
+                <c:choose>
+                    <c:when test="${usuario_logado != null}">
+                        <c:if test="${usuario_logado.tipo_conta =='C'}">
+                            <li class="pesquisa">
+                                <form class="d-flex flex-row" action="/kwolf_arts/arte-pesquisa" method="post" style="margin-bottom: 10px">
+                                    <input class="w-100" type="text" name="campoPesquisa"/>
+                                    <button class="btn btn-light" type="submit" style="width: 50px; height: 40px">
+                                        <img title="pesquisar" src="images/pesquisar.png" alt="pesquisar" width="25" height="25">
+                                    </button>
+                                </form>
+                            </li>
+                        </c:if>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="pesquisa">
+                            <form class="d-flex flex-row" action="/kwolf_arts/arte-pesquisa" method="post" style="margin-bottom: 10px">
+                                <input class="w-100" type="text" name="campoPesquisa"/>
+                                <button class="btn btn-light" type="submit" style="width: 50px; height: 40px">
+                                    <img title="pesquisar" src="images/pesquisar.png" alt="pesquisar" width="25" height="25">
+                                </button>
+                            </form>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
                 <div class="d-flex flex-lg-row flex-column ms-lg-auto gap-4">
                     <c:choose>
                         <c:when test="${usuario_logado != null}">
