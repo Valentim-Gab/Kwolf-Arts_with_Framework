@@ -45,7 +45,13 @@
             </div>
             <div class="w-50 d-flex flex-column justify-content-center gap-4">
                 <p>Nome da arte: ${arte.nome}</p>
-                <p>Artista: <a href="#">${arte.usuario.primeiro_nome}</a></p>
+                <form action="/kwolf_arts/perfil-artista" method="post">
+                    <p>
+                        Artista:
+                        <input class="inputArtista" type="submit" value="${arte.usuario.primeiro_nome}"/>
+                        <input type="hidden" name="id_artista" value="${arte.usuario.id_comprador}">
+                    </p>
+                </form>
                 <p>Copyright: ${arte.copyright}</p>
                 <p>Adicional: ${arte.adicional}</p>
 

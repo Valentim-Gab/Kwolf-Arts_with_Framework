@@ -26,8 +26,8 @@
         <h1>Resultado da pesquisa</h1>
     </div>
     <div class="container principal">
-        <div class="d-flex flex-column flex-lg-row">
-            <c:forEach items="${artes}" var="a">
+        <div class="d-flex flex-wrap">
+            <c:forEach items="${artes}" var="a" varStatus="theCount">
                 <div class="card">
                     <div class="card-img-body d-flex justify-content-center align-items-center">
                         <img src="${a.imagem}"
@@ -53,7 +53,6 @@
                 </div>
             </c:forEach>
         </div>
-
     </div>
 </section>
 
