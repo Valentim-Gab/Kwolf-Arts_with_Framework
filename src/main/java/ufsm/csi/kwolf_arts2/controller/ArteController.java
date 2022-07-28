@@ -49,19 +49,25 @@ public class ArteController {
     }
 
     @PostMapping("/comprar-arte")
-    public String comprarArte(@RequestParam int id_arte, HttpSession session,
+    public RedirectView comprarArte(@RequestParam int id_arte, HttpSession session,
                               RedirectAttributes attributes, Model model) {
         Usuario usuario_logado = (Usuario) session.getAttribute("usuario_logado");
         String url;
         if (usuario_logado != null) {
-            model.addAttribute("arte", new ArteDAO().getArteUnica(id_arte));
-            url =  "comprarArte";
+            url =  "/comprar-arte?id_arte=" + id_arte;
         } else {
-            url = "login";
+            url = "/login";
             attributes.addFlashAttribute("erro", "Faça login antes de comprar uma arte");
         }
 
-        return url;
+        return new RedirectView(url, true);
+    }
+
+    @GetMapping("/comprar-arte")
+    public String comprarArte(@RequestParam int id_arte, Model model) {
+        model.addAttribute("arte", new ArteDAO().getArteUnica(id_arte));
+
+        return "comprarArte";
     }
 
     @PostMapping("/confirmar-compra")

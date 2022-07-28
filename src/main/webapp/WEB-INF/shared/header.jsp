@@ -3,8 +3,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light align-self-center">
     <div class="container-fluid">
-        <img class="logo" src="images/logo.png" alt="Logo da Kwolf arts" width="59" height="59" />
-        <img src="images/Kwolf_Arts.png" alt="Kwolf arts" width="63" height="65" />
+        <img class="logo" src="<c:url value="/images/logo.png"/>" alt="Logo da Kwolf arts" width="59" height="59" />
+        <img src="<c:url value="/images/Kwolf_Arts.png"/>" alt="Kwolf arts" width="63" height="65" />
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -30,22 +30,22 @@
                 <c:choose>
                     <c:when test="${usuario_logado != null}">
                         <c:if test="${usuario_logado.tipo_conta =='C'}">
-                            <li class="pesquisa">
+                            <li class="d-flex flex-lg-row flex-column ms-lg-auto pesquisa">
                                 <form class="d-flex flex-row" action="/kwolf_arts/arte-pesquisa" method="post" style="margin-bottom: 10px">
-                                    <input class="w-100" type="text" name="campoPesquisa"/>
-                                    <button class="btn btn-light" type="submit" style="width: 50px; height: 40px">
-                                        <img title="pesquisar" src="images/pesquisar.png" alt="pesquisar" width="25" height="25">
+                                    <input class="pesquisar w-100" type="text" name="campoPesquisa"/>
+                                    <button class="btn btn-light search" type="submit">
+                                        <img title="pesquisar" src="<c:url value="/images/pesquisar.png"/>" alt="pesquisar" width="25" height="25">
                                     </button>
                                 </form>
                             </li>
                         </c:if>
                     </c:when>
                     <c:otherwise>
-                        <li class="pesquisa">
+                        <li class="d-flex flex-lg-row flex-column ms-lg-auto pesquisa">
                             <form class="d-flex flex-row" action="/kwolf_arts/arte-pesquisa" method="post" style="margin-bottom: 10px">
-                                <input class="w-100" type="text" name="campoPesquisa"/>
-                                <button class="btn btn-light" type="submit" style="width: 50px; height: 40px">
-                                    <img title="pesquisar" src="images/pesquisar.png" alt="pesquisar" width="25" height="25">
+                                <input class="pesquisar w-100" type="text" name="campoPesquisa"/>
+                                <button class="btn btn-light search" type="submit">
+                                    <img title="pesquisar" src="<c:url value="/images/pesquisar.png"/>" alt="pesquisar" width="25" height="25">
                                 </button>
                             </form>
                         </li>

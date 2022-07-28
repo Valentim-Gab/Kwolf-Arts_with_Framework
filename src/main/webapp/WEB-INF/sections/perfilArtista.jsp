@@ -28,7 +28,7 @@
         <br/>
         <div class="d-flex flex-column aligm-items-center gap-5">
             <figure style="margin: auto">
-                <img src="images/perfil_nulo.png" alt="Foto do artista" width="200px">
+                <img src="<c:url value="/images/perfil_nulo.png"/>" alt="Foto do artista" width="200px">
             </figure>
             <div class="d-flex flex-column gap-3 align-items-center" style="text-align: left">
                 <h4>Primeiro nome:</h4>
