@@ -3,7 +3,7 @@ WebSite for selling digital arts.
 
 ```bash
 
- Using {
+Using {
   API:
     - Java: Spring MVC;
     - PostgreSQL;
