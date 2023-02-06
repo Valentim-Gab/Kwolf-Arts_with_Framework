@@ -4,9 +4,11 @@ WebSite for selling digital arts.
 ```bash
 
 Using {
+  Database:
+    - PostgreSQL;
+  
   API:
     - Java: Spring MVC;
-    - PostgreSQL;
     
   WEB:
     - HTML: JSP + bootstrap;
